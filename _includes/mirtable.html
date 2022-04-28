@@ -1,0 +1,44 @@
+<style type="text/css">
+    .mirtable .title {
+        width: 67%;
+    }
+
+    .mirtable .author {
+        width: 33%;
+    }
+</style>
+{% for status in site.data.statuses %}
+{% assign mirs = include.mirs|where:"status",status|sort:"mir" %}
+{% assign count = mirs|size %}
+{% if count > 0 %}
+<h2 id="{{status|slugify}}">{{status}}</h2>
+<table class="mirtable">
+    <thead>
+        {% if status == "Last Call" %}
+        <tr>
+            <th class="mirnum">Number</th>
+            <th class="date">Review ends</th>
+            <th class="title">Title</th>
+            <th class="author">Author</th>
+        </tr>
+        {% else %}
+        <tr>
+            <th class="mirnum">Number</th>
+            <th class="title">Title</th>
+            <th class="author">Author</th>
+        </tr>
+        {% endif %}
+    </thead>
+    {% for page in mirs %}
+    <tr>
+        <td class="mirnum"><a href="{{page.url|relative_url}}">{{page.mir|xml_escape}}</a></td>
+        {% if status == "Last Call" and page.last-call-deadline != undefined %}
+        <td class="date">{{ page.last-call-deadline | xml_escape }}</td>
+        {% endif %}
+        <td class="title">{{page.title|xml_escape}}</td>
+        <td class="author">{% include authorlist.html authors=page.author %}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endif %}
+{% endfor %}

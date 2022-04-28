@@ -1,0 +1,4 @@
+{% assign mirs=include.mirs|split:"," %}
+{% for mirnum in mirs %}
+<a href="{{mirnum|strip|prepend:" eip-" }}">{{mirnum|strip}}</a>{% if forloop.last == false %}, {% endif %}
+{% endfor %}

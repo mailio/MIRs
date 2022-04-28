@@ -1,0 +1,59 @@
+---
+layout: default
+title: Home
+---
+<h1 class="page-heading">MIRs
+    <a href="https://discord.gg/hXjFS2zWra">
+        <img src=https://img.shields.io/badge/mailio-dev-black?logo=discord&logoColor=white" />
+    </a>
+</h1>
+
+<h2>MIR status terms</h2>
+<ul>
+    <li><strong>Idea</strong> - An idea that is pre-draft. This is not tracked within the MIR Repository.
+    <li><strong>Draft</strong> - The first formally tracked stage of an MIR in development. An MIR is merged by an MIR
+        Editor into the MIR repository when properly formatted.</li>
+    <li><strong>Review</strong> - An MIR Author marks an MIR as ready for and requesting Peer Review.</li>
+    <li><strong>Last Call</strong> - This is the final review window for an EIP before moving to FINAL. An EIP editor
+        will assign Last Call status and set a review end date (`last-call-deadline`), typically 14 days later. If this
+        period results in necessary normative changes it will revert the EIP to Review.</li>
+    <li><strong>Final</strong> - This MIR represents the final standard. A Final MIR exists in a state of finality and
+        should only be updated to correct errata and add non-normative clarifications.</li>
+    <li><strong>Stagnant</strong> - Any MIR in Draft or Review if inactive for a period of 6 months or greater is moved
+        to Stagnant. An MIR may be resurrected from this state by Authors or MIR Editors through moving it back to
+        Draft.</li>
+    <li><strong>Withdrawn</strong> - The MIR Author(s) have withdrawn the proposed MIR. This state has finality and can
+        no longer be resurrected using this MIR number. If the idea is pursued at later date it is considered a new
+        proposal.</li>
+    <li><strong>Living</strong> - A special status for MIRs that are designed to be continually updated and not reach a
+        state of finality. This includes most notably MIR-1.</li>
+</ul>
+
+<h2>MIR Types</h2>
+
+<p>MIRs are separated into a number of types, and each has its own list of MIRs.</p>
+
+<h4><a href="/architecture">Architecture</a> ({{site.pages|where:"type","Architecture"|size}})</h4>
+<p> Mailio ecosystem architecture, its components and interactions. Architecture ecompoases API definitions, dependant
+    services, client/server communications.</p>
+
+<h4><a href="/core">Core</a> ({{site.pages|where:"type","Core"|where:"category","Core"|size}})</h4>
+<p>Describes any change that affects most or all Mailio implementations, such as a change to the network protocol,
+    proposed application standards/conventions, or any change or addition
+    that affects the interoperability of applications using Mailio.
+</p>
+
+<h4><a href="/components">Components</a> ({{site.pages|where:"type","Components"|size}})</h4>
+<p>Core components encompass all custom made components required for Mailio ecosystem to function. This section contains
+    all core components, whether for web interface of core/backend</p>
+
+<h4><a href="/web">Web</a> ({{site.pages|where:"type","Web"|size}})</h4>
+<p>Includes improvements around client API/RPC specifications and standards, and also certain language-level standards
+    like method names. </p>
+
+
+<h4><a href="/informational">Informational</a> ({{site.pages|where:"type","Informational"|size}})
+</h4>
+<p>Describes a Mailio design issue, or provides general guidelines or information to the Mailio community, but does
+    not propose a new feature. Informational MIRs do not necessarily represent Mailio community consensus or a
+    recommendation, so users and implementers are free to ignore Informational MIRs or follow their advice.</p>
