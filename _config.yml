@@ -1,1 +1,4 @@
 theme: jekyll-theme-minimal
+title: Mailio Implementation Rationales
+description: >-
+  Mailio Implementation Rationales (MIRs) describe standards for Mailio platform, including core functional specifications, server APIs and protocol standards. 
