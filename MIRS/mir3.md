@@ -9,7 +9,7 @@ created: 2022-04-28
 
 
 ## Abstract
-Currently Mailio Evaporate supports only Angular framework. The goal is to have a `npm` package and the library converted to general typescript modular component. 
+Currently Mailio Evaporate supports only Angular framework. The goal is to have a `npm` package and the library converted to framework agnostic typescript modular component. 
 
 
 ## Motivation

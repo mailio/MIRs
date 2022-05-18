@@ -8,7 +8,7 @@
     }
 </style>
 {% for status in site.data.statuses %}
-{% assign mirs = include.mirs|where:"status",status|sort:"mir" %}
+{% assign mirs = include.mirs|where:"status",status %}
 {% assign count = mirs|size %}
 {% if count > 0 %}
 <h2 id="{{status|slugify}}">{{status}}</h2>
