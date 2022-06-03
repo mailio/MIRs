@@ -2,7 +2,7 @@
 mir: 5
 title: DNS Discovery
 author: Igor Rendulic (@igorrendulic)
-status: Draft
+status: Review
 type: Components
 created: 2022-06-01
 ---
@@ -28,12 +28,12 @@ Mailio server **MUST** have a DNS TXT record that **MUST** adhere to the format 
 `mailio public exchange key`
 
 ```
-mailio._mailiokey.mail.io 	TXT	"v=MAILIO1; k=ed25519; p=AAAAC3NzaC1lZDI1NTE5AAAAIBfJ2Qjt5GPi7DKRPGxJCkvk8xNsG9dA607tnWagOk2D"
+mailio._mailiokey.mail.io 	TXT	"v=MAILIO1; k=ed25519; p=5uW7anEGF1nIjGfp5pS2kiN0cn2mGYkuSa+TCBoFIbQ="
 ```
 
 The structure of a MAILIO DNS TXT record **MUST** be `<selector>._mailiokey.<domain>`, where the selector **MUST** be `mailio`.
 
-`p=AAA...` **MUST** be the public Mailio Ed25519 signature key in `base64` format. The Mailio public key **MUST** be 32 bytes in length.
+`p=5uW7anEGF1nIjGfp5pS2kiN0cn2mGYkuSa+TCBoFIbQ=` **MUST** be the public Mailio Ed25519 signature key in `base64` format. The Mailio public key **MUST** be 32 bytes in length.
 
 The DNS TXT record **MUST** always start with verision: `v=MAILIO1`.
 
