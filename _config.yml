@@ -16,10 +16,10 @@
 title: Mailio Implementation Rationales
 description: >- # this means to ignore newlines until "baseurl:"
   Mailio Implementation Rationales (MIRs) describe standards for Mailio platform, 
-  including core functional specifications, server APIs and protocol standards. 
+  including core functional specifications, server APIs and protocol standards.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "mirs.mail.io" # the base hostname & protocol for your site, e.g. http://example.com
-github_username:  mailio
+github_username: mailio
 
 # Build settings
 highlighter: rouge
@@ -40,12 +40,11 @@ header_pages:
   - architecture.html
   - components.html
   - core.html
-  - web.html
+  - api.html
   - informational.html
 
 defaults:
-  -
-    scope:
+  - scope:
       path: "MIRS"
     values:
       layout: "mir"
