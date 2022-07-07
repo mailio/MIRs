@@ -11,8 +11,6 @@ created: 2022-07-06
 
 ## Abstract
 
-Mailio REST API is a generic protocol for synchronizing data between a client and server, optimizied for mobile and web environments.
-
 Server capabilities API is able to communicate all capabilities of the server, such as:
 
 - active API version
