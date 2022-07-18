@@ -1,7 +1,7 @@
 ---
 mir: 8
 title: Folders API
-description: Email Folders API operations
+description: Message Folders API operations
 author: Igor Rendulic (@igorrendulic)
 status: Draft
 type: API
@@ -38,13 +38,55 @@ type Folder struct {
 }
 ```
 
+## Operations
+
+### Create new folder
+
+**RECOMMENDED** URL path for REST API: `POST https://{path}/folder`
+
+```json
+{
+  "Name": "My folder"
+}
+```
+
+### List all folders
+
+**RECOMMENDED** URL path for REST API: `GET https://{path}/folder`
+
+Example JSON response:
+
+```json
+[
+  {
+    "id": "9m4e2mr0ui3e8a215n4g",
+    "name": "Trusted",
+    "totalMessages": 541344,
+    "unreadMessages": 1
+  },
+  {
+    "id": "9m4e2mr0ui3e8a3ww6n3g",
+    "name": "Good Reads",
+    "totalMessages": 1000,
+    "unreadMessages": 10
+  }
+]
+```
+
+### Update folder name
+
+**RECOMMENDED** URL path for REST API: `PUT https://{path}/folder`
+
+```json
+{
+  "ID": "9m4e2mr0ui3e8a215n4g",
+  "Name": "new name"
+}
+```
+
 ## Rationale
 
 Folders are for organizing user messages.
-
-## Reference Implementation
-
-[https://github.com/mailio/go-mailio-core-modules/blob/main/api/api_folders.go](https://github.com/mailio/go-mailio-core-modules/blob/main/api/api_folders.go)
 
 ## Security Considerations
 
