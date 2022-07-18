@@ -62,6 +62,34 @@ type ServerProtocol struct {
 - EmailDomains - list of supported email domains (e.g. [mail.io]), optional
 - SupportedProtocols - list of supported protocols.
 
+## Operations
+
+### Get Server Capabilities
+
+**RECOMMENDED** URL path for REST API: `GET https://{path}/capabilities`
+
+Example response:
+
+```json
+{
+  "emailDomains": ["mail.io"],
+  "supportedProtocols": [
+    {
+      "version": "1.1.0",
+      "type": "https",
+      "purpose": "restapi"
+    },
+    {
+      "version": "1.0",
+      "type": "proto",
+      "purpose": "exchange"
+    }
+  ],
+  "maximumMessageSizeBytes": 20000000,
+  "maximumSingleAttachmentSizeBytes": 3000000
+}
+```
+
 ## Rationale
 
 The server capabilities are meant to lower the communication glitches for server to server and client to server communications.
@@ -70,13 +98,9 @@ The server capabilities are meant to lower the communication glitches for server
 
 Versioning of protocols is essential for backwards compatibility. Servers **MUST** be able to support all previous versions of implemented protocols.
 
-## Reference Implementation
-
-[https://github.com/mailio/go-mailio-core-modules/blob/main/api/api.go](https://github.com/mailio/go-mailio-core-modules/blob/main/api/api.go)
-
 ## Security Considerations
 
-All protocols must have end-to-end encrypted communication.
+All API communication must be conducted over TLS 1.2 or newer protocol.
 
 ## Copyright
 
